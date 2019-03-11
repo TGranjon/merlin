@@ -21,7 +21,7 @@ echo "Step 1:"
 
 current_working_dir=$(pwd)
 merlin_dir=$(dirname $(dirname $(dirname $current_working_dir)))
-experiments_dir=${current_working_dir}/experiments
+experiments_dir=/lium/raid01_b/tgranjon/merlin/experiments
 
 voice_name=$1
 voice_dir=${experiments_dir}/${voice_name}
@@ -90,6 +90,7 @@ global_config_file=conf/global_settings.cfg
 ### default settings ###
 echo "MerlinDir=${merlin_dir}" >  $global_config_file
 echo "WorkDir=${current_working_dir}" >>  $global_config_file
+echo "XPDir=/lium/raid01_b/tgranjon/merlin" >> $global_config_file
 echo "Voice=${voice_name}" >> $global_config_file
 echo "Labels=state_align" >> $global_config_file
 echo "QuestionFile=questions-radio_dnn_416.hed" >> $global_config_file

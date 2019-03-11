@@ -21,7 +21,7 @@ fi
 
 ### define few variables here
 frontend=${MerlinDir}/misc/scripts/frontend
-testDir=experiments/${Voice}/test_synthesis
+testDir=/lium/raid01_b/tgranjon/merlin/nick/experiments/${Voice}/test_synthesis
 
 txt_dir=${testDir}/txt
 txt_file=${testDir}/utts.data

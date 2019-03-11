@@ -35,7 +35,7 @@ cp -f $WorkDir/conf/general/duration_demo.conf $duration_config_file
 # ... and modify it:
 
 $SED -i s#'Merlin:.*'#'Merlin: '$MerlinDir# $duration_config_file
-$SED -i s#'TOPLEVEL:.*'#'TOPLEVEL: '${WorkDir}# $duration_config_file
+$SED -i s#'TOPLEVEL:.*'#'TOPLEVEL: /lium/raid01_b/tgranjon/merlin/nick'# $duration_config_file
 $SED -i s#'work:.*'#'work: %(TOPLEVEL)s/experiments/'${Voice}'/duration_model'# $duration_config_file
 
 $SED -i s#'file_id_list:.*'#'file_id_list: %(data)s/'${FileIDList}# $duration_config_file

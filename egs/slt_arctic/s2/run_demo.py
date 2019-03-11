@@ -128,7 +128,7 @@ if __name__ == '__main__':
     # PROCESS:===================================================================================================
     # Pre setup:-------------------------------------------------------------------------------
     exper_name  = 'slt_arctic_magphase_%s_mag_dim_%s_phase_dim_%d_const_rate_%d' % (exper_type, d_mp_opts['mag_dim'], d_mp_opts['phase_dim'], d_mp_opts['b_const_rate'])
-    exper_path  = join(this_dir, 'experiments' , exper_name)
+    exper_path  = join('/lium/raid01_b/tgranjon/merlin/s2/', 'experiments' , exper_name)
     merlin_path = realpath(this_dir + '/../../..')
     submit_path     = join(this_dir, 'scripts', 'submit.sh')
     run_merlin_path = join(merlin_path, 'src', 'run_merlin.py')
