@@ -36,16 +36,17 @@ cp -f $MerlinDir/misc/recipes/duration_demo.conf $duration_config_file
 
 $SED -i s#'Merlin:.*'#'Merlin: '$MerlinDir# $duration_config_file
 $SED -i s#'TOPLEVEL:.*'#'TOPLEVEL: '${WorkDir}# $duration_config_file
-$SED -i s#'work:.*'#'work: %(TOPLEVEL)s/experiments/'${Voice}'/duration_model'# $duration_config_file
+$SED -i s#'XP:.*'#'XP: /lium/raid01_b/tgranjon/merlin'# $duration_config_file
+$SED -i s#'work:.*'#'work: %(XP)s/experiments/'${Voice}'/duration_model'# $duration_config_file
 
 $SED -i s#'file_id_list:.*'#'file_id_list: %(data)s/'${FileIDList}# $duration_config_file
-$SED -i s#'test_id_list\s*:.*'#'test_id_list: %(TOPLEVEL)s/experiments/'${Voice}'/test_synthesis/test_id_list.scp'# $duration_config_file
+$SED -i s#'test_id_list\s*:.*'#'test_id_list: %(XP)s/experiments/'${Voice}'/test_synthesis/test_id_list.scp'# $duration_config_file
 
 
 # [Labels]
 $SED -i s#"silence_pattern:.*"#"silence_pattern: ['*-"${SilencePhone}"+*']"# $duration_config_file
 $SED -i s#'label_type:.*'#'label_type: '${Labels}# $duration_config_file
-$SED -i s#'label_align\s*:.*'#'label_align: %(TOPLEVEL)s/experiments/'${Voice}'/test_synthesis/prompt-lab'# $duration_config_file
+$SED -i s#'label_align\s*:.*'#'label_align: %(XP)s/experiments/'${Voice}'/test_synthesis/prompt-lab'# $duration_config_file
 $SED -i s#'question_file_name\s*:.*'#'question_file_name: %(Merlin)s/misc/questions/'${QuestionFile}# $duration_config_file
 
 
@@ -64,7 +65,7 @@ fi
 
 # [Waveform]
 
-$SED -i s#'test_synth_dir\s*:.*'#'test_synth_dir: %(TOPLEVEL)s/experiments/'${Voice}'/test_synthesis/gen-lab'# $duration_config_file
+$SED -i s#'test_synth_dir\s*:.*'#'test_synth_dir: %(xp)s/experiments/'${Voice}'/test_synthesis/gen-lab'# $duration_config_file
 
 
 # [Architecture]
@@ -113,10 +114,11 @@ cp -f $MerlinDir/misc/recipes/acoustic_demo.conf $acoustic_config_file
 
 $SED -i s#'Merlin\s*:.*'#'Merlin: '$MerlinDir# $acoustic_config_file
 $SED -i s#'TOPLEVEL\s*:.*'#'TOPLEVEL: '${WorkDir}# $acoustic_config_file
-$SED -i s#'work\s*:.*'#'work: %(TOPLEVEL)s/experiments/'${Voice}'/acoustic_model'# $acoustic_config_file
+$SED -i s#'XP\s:.*'#'XP: /lium/raid01_b/tgranjon/merlin'# $acoustic_config_file
+$SED -i s#'work\s*:.*'#'work: %(XP)s/experiments/'${Voice}'/acoustic_model'# $acoustic_config_file
 
 $SED -i s#'file_id_list\s*:.*'#'file_id_list: %(data)s/'${FileIDList}# $acoustic_config_file
-$SED -i s#'test_id_list\s*:.*'#'test_id_list: %(TOPLEVEL)s/experiments/'${Voice}'/test_synthesis/test_id_list.scp'# $acoustic_config_file
+$SED -i s#'test_id_list\s*:.*'#'test_id_list: %(XP)s/experiments/'${Voice}'/test_synthesis/test_id_list.scp'# $acoustic_config_file
 
 
 # [Labels]
@@ -124,7 +126,7 @@ $SED -i s#'test_id_list\s*:.*'#'test_id_list: %(TOPLEVEL)s/experiments/'${Voice}
 $SED -i s#"silence_pattern:.*"#"silence_pattern: ['*-"${SilencePhone}"+*']"# $acoustic_config_file
 $SED -i s#'enforce_silence\s*:.*'#'enforce_silence: True'# $acoustic_config_file
 $SED -i s#'label_type\s*:.*'#'label_type: '${Labels}# $acoustic_config_file
-$SED -i s#'label_align\s*:.*'#'label_align: %(TOPLEVEL)s/experiments/'${Voice}'/test_synthesis/gen-lab'# $acoustic_config_file
+$SED -i s#'label_align\s*:.*'#'label_align: %(XP)s/experiments/'${Voice}'/test_synthesis/gen-lab'# $acoustic_config_file
 $SED -i s#'question_file_name\s*:.*'#'question_file_name: %(Merlin)s/misc/questions/'${QuestionFile}# $acoustic_config_file
 if [ "$Labels" == "state_align" ]
 then
@@ -168,7 +170,7 @@ $SED -i s#'dlf0\s*:.*'#'dlf0: 3'# $acoustic_config_file
 
 # [Waveform]
 
-$SED -i s#'test_synth_dir\s*:.*'#'test_synth_dir: %(TOPLEVEL)s/experiments/'${Voice}'/test_synthesis/wav'# $acoustic_config_file
+$SED -i s#'test_synth_dir\s*:.*'#'test_synth_dir: %(XP)s/experiments/'${Voice}'/test_synthesis/wav'# $acoustic_config_file
 
 $SED -i s#'vocoder_type\s*:.*'#'vocoder_type: '${Vocoder}# $acoustic_config_file
 

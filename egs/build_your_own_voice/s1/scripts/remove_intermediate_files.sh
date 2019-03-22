@@ -18,7 +18,7 @@ fi
 
 current_working_dir=$(pwd)
 
-synthesis_dir=${WorkDir}/experiments/${Voice}/test_synthesis
+synthesis_dir=${XPDir}/experiments/${Voice}/test_synthesis
 gen_lab_dir=${synthesis_dir}/gen-lab
 gen_wav_dir=${synthesis_dir}/wav
 

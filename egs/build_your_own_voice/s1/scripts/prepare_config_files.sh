@@ -36,7 +36,7 @@ cp -f $MerlinDir/misc/recipes/duration_demo.conf $duration_config_file
 
 $SED -i s#'Merlin:.*'#'Merlin: '$MerlinDir# $duration_config_file
 $SED -i s#'TOPLEVEL:.*'#'TOPLEVEL: '${WorkDir}# $duration_config_file
-$SED -i s#'work:.*'#'work: %(TOPLEVEL)s/experiments/'${Voice}'/duration_model'# $duration_config_file
+$SED -i s#'work:.*'#'work: %(XP)s/experiments/'${Voice}'/duration_model'# $duration_config_file
 
 $SED -i s#'file_id_list:.*'#'file_id_list: %(data)s/'${FileIDList}# $duration_config_file
 
@@ -44,7 +44,7 @@ $SED -i s#'file_id_list:.*'#'file_id_list: %(data)s/'${FileIDList}# $duration_co
 
 $SED -i s#"silence_pattern:.*"#"silence_pattern: ['*-"${SilencePhone}"+*']"# $duration_config_file
 $SED -i s#'label_type:.*'#'label_type: '${Labels}# $duration_config_file
-$SED -i s#'label_align:.*'#'label_align: %(TOPLEVEL)s/experiments/'${Voice}'/duration_model/data/label_'${Labels}# $duration_config_file
+$SED -i s#'label_align:.*'#'label_align: %(XP)s/experiments/'${Voice}'/duration_model/data/label_'${Labels}# $duration_config_file
 $SED -i s#'question_file_name:.*'#'question_file_name: %(Merlin)s/misc/questions/'${QuestionFile}# $duration_config_file
 
 
@@ -92,8 +92,9 @@ cp -f $MerlinDir/misc/recipes/acoustic_demo.conf $acoustic_config_file
 
 $SED -i s#'Merlin:.*'#'Merlin: '$MerlinDir# $acoustic_config_file
 $SED -i s#'TOPLEVEL:.*'#'TOPLEVEL: '${WorkDir}# $acoustic_config_file
-$SED -i s#'work:.*'#'work: %(TOPLEVEL)s/experiments/'${Voice}'/acoustic_model'# $acoustic_config_file
+$SED -i s#'XP:.*'#'XP: /lium/raid01_b/tgranjon/merlin'# $acoustic_config_file
 
+$SED -i s#'work:.*'#'work: %(XP)s/experiments/'${Voice}'/acoustic_model'# $acoustic_config_file
 $SED -i s#'file_id_list:.*'#'file_id_list: %(data)s/'${FileIDList}# $acoustic_config_file
 
 
@@ -101,7 +102,7 @@ $SED -i s#'file_id_list:.*'#'file_id_list: %(data)s/'${FileIDList}# $acoustic_co
 
 $SED -i s#"silence_pattern:.*"#"silence_pattern: ['*-"${SilencePhone}"+*']"# $acoustic_config_file
 $SED -i s#'label_type:.*'#'label_type: '${Labels}# $acoustic_config_file
-$SED -i s#'label_align:.*'#'label_align: %(TOPLEVEL)s/experiments/'${Voice}'/acoustic_model/data/label_'${Labels}# $acoustic_config_file
+$SED -i s#'label_align:.*'#'label_align: %(XP)s/experiments/'${Voice}'/acoustic_model/data/label_'${Labels}# $acoustic_config_file
 $SED -i s#'question_file_name:.*'#'question_file_name: %(Merlin)s/misc/questions/'${QuestionFile}# $acoustic_config_file
 
 if [ "$Labels" == "state_align" ]
